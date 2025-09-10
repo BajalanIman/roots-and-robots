@@ -4,6 +4,9 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import * as turf from "@turf/turf";
 import AerialImage from "./AerialImage";
+import proj4 from "proj4";
+
+const utm33N = "+proj=utm +zone=33 +datum=WGS84 +units=m +no_defs";
 
 import {
   MapContainer,
@@ -184,12 +187,13 @@ const LeafletContainer = ({
               )
                 return null;
 
-              const position = [Number(loc.y), Number(loc.x)];
+              // Convert UTM to lat/lng
+              const [lng, lat] = proj4(utm33N, "WGS84", [loc.x, loc.y]);
 
               return (
                 <Marker
                   key={`soil-${idx}`}
-                  position={position}
+                  position={[lat, lng]} // Leaflet wants [lat, lng]
                   eventHandlers={{
                     click: () => setSelectedLocation(loc), // open modal
                   }}

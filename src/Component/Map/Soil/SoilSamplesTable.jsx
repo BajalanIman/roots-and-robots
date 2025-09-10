@@ -3,7 +3,10 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { BASE_URL } from "../../../constants/constants";
 
-const API_BASE = import.meta.env.VITE_API_BASE || `${BASE_URL}`;
+const API_BASE = (import.meta.env.VITE_API_BASE || `${BASE_URL}`).replace(
+  /\/?$/,
+  "/"
+);
 
 const SoilSamplesTable = ({ plotId, setSoilLocations, showSoilData }) => {
   const [loading, setLoading] = useState(false);
@@ -55,14 +58,14 @@ const SoilSamplesTable = ({ plotId, setSoilLocations, showSoilData }) => {
       // try the grouped endpoint first (if you later add it)
       let resp;
       try {
-        resp = await axios.get(`${API_BASE}/api/soil`, {
+        resp = await axios.get(`${API_BASE}api/soil`, {
           params: { plot_id: plotId },
           timeout: 5000,
         });
         // OK if returned 200
       } catch (errLocations) {
         // fallback to /api/soil (samples)
-        resp = await axios.get(`${API_BASE}/api/soil`, {
+        resp = await axios.get(`${API_BASE}api/soil`, {
           params: { plot_id: plotId },
           timeout: 5000,
         });
@@ -70,7 +73,6 @@ const SoilSamplesTable = ({ plotId, setSoilLocations, showSoilData }) => {
 
       // store raw data for debugging
       setRaw(resp.data);
-      console.log("Soil API response:", resp.data);
 
       // If server returned locations already
       if (Array.isArray(resp.data?.locations)) {

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Papa from "papaparse";
 import axios from "axios";
+import { BASE_URL } from "../../../constants/constants";
 
 const SoilUploaderForm = ({ plotId }) => {
   const [file, setFile] = useState(null);
@@ -160,7 +161,7 @@ const SoilUploaderForm = ({ plotId }) => {
               return;
             }
 
-            const resp = await axios.post("localhost:8800/api/soil", {
+            const resp = await axios.post(`${BASE_URL}api/soil`, {
               samples,
               plot_id: plotId, // helpful to pass top-level too
             });
