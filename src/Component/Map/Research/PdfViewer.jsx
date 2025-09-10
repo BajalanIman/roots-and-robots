@@ -1,10 +1,9 @@
 export default function PdfViewer() {
-  const fileId = "1XikqvibXnFuz9GQ5A51Kyoq-JWGrF-nI"; // Replace with your file ID
+  const fileId = "1W8fi_Evhyrhx70bs-AwDVe_UTHjqyfHE"; // Replace with your file ID
 
   // For showing inside the page
   const previewUrl = `https://drive.google.com/file/d/${fileId}/preview`;
 
-  // For downloading
   const downloadUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
 
   return (

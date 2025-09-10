@@ -9,14 +9,14 @@ const Researches = () => {
   const [message, setMessage] = useState("");
 
   const years = [
-    { year: 2016 },
-    { year: 2017 },
-    { year: 2018 },
-    { year: 2019 },
-    { year: 2020 },
-    { year: 2021 },
-    { year: 2022 },
-    { year: 2023 },
+    // { year: 2016 },
+    // { year: 2017 },
+    // { year: 2018 },
+    // { year: 2019 },
+    // { year: 2020 },
+    // { year: 2021 },
+    // { year: 2022 },
+    // { year: 2023 },
     { year: 2024 },
     { year: 2025 },
   ];
@@ -24,12 +24,12 @@ const Researches = () => {
   const studySubjects = [
     { subject: "Forestry" },
     { subject: "Agroforestry" },
-    { subject: "Agriculture" },
-    { subject: "Plant Pathology" },
-    { subject: "Soil Science" },
-    { subject: "Environmental Science" },
-    { subject: "Ecology" },
-    { subject: "Zoology" },
+    // { subject: "Agriculture" },
+    // { subject: "Plant Pathology" },
+    // { subject: "Soil Science" },
+    // { subject: "Environmental Science" },
+    // { subject: "Ecology" },
+    // { subject: "Zoology" },
   ];
 
   const studyTitles = [
