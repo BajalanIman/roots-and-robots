@@ -22,3 +22,10 @@ If you are developing a production application, we recommend using TypeScript wi
 
 If adding new table to database:
 -npx prisma migrate dev --name add-tree-plot
+
+note:
+//<SoilSamplesTable
+// plotId={1} # this must be static (Map.jsx)
+// setSoilLocations={setSoilLocations}
+// showSoilData={showSoilData}
+// />

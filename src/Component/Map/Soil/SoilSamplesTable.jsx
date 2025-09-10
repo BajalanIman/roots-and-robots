@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { BASE_URL } from "../../../constants/constants";
 
-const API_BASE = (import.meta.env.VITE_API_BASE || `${BASE_URL}`).replace(
+const API_BASE = (import.meta.env.VITE_API_BASE || BASE_URL).replace(
   /\/?$/,
   "/"
 );
