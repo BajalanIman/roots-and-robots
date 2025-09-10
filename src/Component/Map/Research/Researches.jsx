@@ -33,7 +33,7 @@ const Researches = () => {
   ];
 
   const studyTitles = [
-    { title: "Schmetterlinge nach AFS Monitoring Münster" },
+    { title: "Estimation of Scots pine bark biomass" },
     {
       title: "Hummeln und Wildbienen in der Agroforst",
     },
@@ -154,7 +154,7 @@ const Researches = () => {
       {/* Action buttons */}
       {defineSubject === "Agroforestry" &&
       defineYear === 2025 &&
-      defineTitle === "Schmetterlinge nach AFS Monitoring Münster" ? (
+      defineTitle === "Estimation of Scots pine bark biomass" ? (
         <div className="flex mt-5 gap-3 justify-center">
           <button
             onClick={showReportHandler}
@@ -176,7 +176,7 @@ const Researches = () => {
       {showReport &&
         defineSubject === "Agroforestry" &&
         defineYear === 2025 &&
-        defineTitle === "Schmetterlinge nach AFS Monitoring Münster" && (
+        defineTitle === "Estimation of Scots pine bark biomass" && (
           <div className="border border-gray-200 mt-5 rounded-lg overflow-hidden shadow-lg">
             <PdfViewer />
           </div>
@@ -184,7 +184,7 @@ const Researches = () => {
       {showData &&
         defineSubject === "Agroforestry" &&
         defineYear === 2025 &&
-        defineTitle === "Schmetterlinge nach AFS Monitoring Münster" && (
+        defineTitle === "Estimation of Scots pine bark biomass" && (
           <ExcelViewer />
         )}
     </div>
