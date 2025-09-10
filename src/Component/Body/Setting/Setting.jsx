@@ -12,6 +12,7 @@ import SoilUploaderForm from "./SoilUploaderForm";
 import StepDivider from "./StepDivider";
 import ShowComponent from "./ShowComponent";
 import ResearchUploaderForm from "./ResearchUploaderForm";
+import { BASE_URL } from "../../../constants/constants";
 
 const Setting = () => {
   const [assignedArea, setAssignedArea] = useState(null);
@@ -28,14 +29,13 @@ const Setting = () => {
 
     if (storedUser && storedUser.role === "admin") {
       axios
-        .get(`/api/area-admins/${storedUser.user_id}`)
+        .get(`${BASE_URL}api/area-admins/${storedUser.user_id}`)
         .then((res) => {
           const areaId =
             res.data.areaId ||
             res.data.area_id ||
             res.data.areas?.[0] ||
             res.data[0]?.areaId;
-
           setAssignedArea(areaId);
         })
         .catch((err) => console.error("Failed to fetch area:", err));
