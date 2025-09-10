@@ -235,7 +235,7 @@ function Map() {
 
                 {zoomLevel > 14 && showSoilData && !treeVideo.tree_id && (
                   <SoilSamplesTable
-                    plotId={2}
+                    plotId={1}
                     setSoilLocations={setSoilLocations}
                     showSoilData={showSoilData}
                   />
