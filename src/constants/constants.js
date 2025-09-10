@@ -1,2 +1,3 @@
-export const BASE_URL = "roots-and-robots-backend-production.up.railway.app/";
+export const BASE_URL =
+  "https://roots-and-robots-backend-production.up.railway.app/";
 //export const BASE_URL = "http://localhost:8800/";
