@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { BASE_URL } from "../../../constants/constants";
 
 const AreaDetails = ({ areaId }) => {
   const [area, setArea] = useState(null);
@@ -7,7 +8,7 @@ const AreaDetails = ({ areaId }) => {
   useEffect(() => {
     if (areaId) {
       axios
-        .get(`/api/areas/${areaId}`)
+        .get(`${BASE_URL}api/areas/${areaId}`)
         .then((res) => {
           //   console.log(res);
           setArea(res.data);

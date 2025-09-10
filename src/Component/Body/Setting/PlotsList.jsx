@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { BASE_URL } from "../../../constants/constants";
 
 const PlotsList = ({
   areaId,
@@ -11,7 +12,7 @@ const PlotsList = ({
 
   useEffect(() => {
     axios
-      .get("/api/plots")
+      .get(`${BASE_URL}api/plots`)
       .then((res) => {
         const filteredPlots = res.data.filter(
           (plot) => plot.area_id === areaId

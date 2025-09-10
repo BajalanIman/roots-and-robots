@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { BASE_URL } from "../../constants/constants";
 
 const ShowVideos = ({ treeId }) => {
   const [treeVideos, setTreeVideos] = useState([]);
@@ -9,7 +10,7 @@ const ShowVideos = ({ treeId }) => {
 
     const fetchTreeVideos = async () => {
       try {
-        const res = await axios.get(`/api/tree/${treeId}/videos`);
+        const res = await axios.get(`${BASE_URL}api/tree/${treeId}/videos`);
         setTreeVideos(res.data);
       } catch (err) {
         console.error("Error fetching tree videos:", err);
